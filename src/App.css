@@ -26,6 +26,13 @@
   font-size: 14px;
   background: transparent;
   border: 1px solid black;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.hero__btn:hover {
+  color: white;
+  background: black;
 }
 
 .hero__empty {
