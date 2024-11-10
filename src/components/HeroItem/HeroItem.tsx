@@ -1,14 +1,10 @@
 import React from 'react';
 import {HeroItemProps} from "../../interfaces";
 import './HeroItem.css'
-import {useNavigate} from "react-router-dom";
+import {useHeroItem} from "./useHeroItem";
 
 const HeroItem: React.FC<HeroItemProps> = ({hero, number, remove}) => {
-    const navigate = useNavigate();
-
-    const handleOpen = () => {
-        navigate(`/hero/${hero.id}`);
-    }
+    const {handleOpen} = useHeroItem(hero);
 
     return (
         <div className="hero">

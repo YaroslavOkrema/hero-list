@@ -1,16 +1,10 @@
 import React from 'react';
-import {useNavigate, useParams} from "react-router-dom";
 import {HeroInfoProps} from "../../interfaces";
+import {useHeroInfo} from "./useHeroInfo";
 
 
 const HeroInfo: React.FC<HeroInfoProps> = ({heroes}) => {
-    const {id} = useParams();
-    const hero = heroes.find(h => h.id === parseInt(id!));
-    const navigate = useNavigate();
-
-    const handleBack = () => {
-        navigate('/');
-    }
+    const {hero, handleBack} = useHeroInfo(heroes);
 
     return (
         <div>

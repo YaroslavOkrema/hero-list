@@ -1,17 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {HeroFormProps} from "../../interfaces";
+import {useHeroForm} from "./useHeroForm";
 
 const HeroForm: React.FC<HeroFormProps> = ({add}) => {
-    const [hero, setHero] = useState({name: '', description: ''});
-
-    function addHero(event: React.FormEvent) {
-        event.preventDefault();
-        const newHero = {
-            ...hero, id: Date.now(),
-        }
-        add(newHero);
-        setHero({name: '', description: ''});
-    }
+    const {hero, setHero, addHero} = useHeroForm({add});
 
     return (
         <form>

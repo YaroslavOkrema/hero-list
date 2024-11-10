@@ -22,3 +22,12 @@ export interface HeroFormProps {
 export interface HeroInfoProps {
     heroes: Hero[];
 }
+
+export interface UseHeroInfo {
+    hero: Hero | undefined;
+    handleBack: () => void;
+}
+
+export interface UseHeroItem {
+    handleOpen: () => void;
+}
