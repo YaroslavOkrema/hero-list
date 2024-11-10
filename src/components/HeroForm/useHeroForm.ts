@@ -6,6 +6,12 @@ export function useHeroForm({add}: HeroFormProps) {
 
     function addHero(event: React.FormEvent) {
         event.preventDefault();
+
+        if (!hero.name.trim() || !hero.description.trim()) {
+            alert('Enter hero name and description!');
+            return;
+        }
+
         const newHero = {
             ...hero, id: Date.now(),
         }
