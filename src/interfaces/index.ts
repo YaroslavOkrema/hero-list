@@ -18,3 +18,7 @@ export interface HeroItemProps {
 export interface HeroFormProps {
     add: (newHero: Hero) => void;
 }
+
+export interface HeroInfoProps {
+    heroes: Hero[];
+}
